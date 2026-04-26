@@ -1,3 +1,4 @@
+package com.mycompany.caso3; 
 public class MovimientoStock {
 
     // ── Constantes de tipo 

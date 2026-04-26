@@ -1,3 +1,4 @@
+package com.mycompany.caso3; 
 import java.util.ArrayList;
 
 public class Producto {

@@ -1,4 +1,4 @@
-public package com.mycompany.caso3;
+package com.mycompany.caso3;
 
 class Categoria {
 
