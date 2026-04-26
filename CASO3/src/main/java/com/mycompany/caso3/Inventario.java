@@ -1,20 +1,8 @@
 import java.util.ArrayList;
 
-/**
- * Clase Inventario
- * Clase central del sistema. Gestiona productos y movimientos de stock.
- *
- * Relaciones (según diagrama UML del Caso 3):
- *   - Agregación   con Producto        → los productos pueden existir sin el inventario.
- *   - Composición  con MovimientoStock → los movimientos son parte del inventario.
- *
- * Cubre todos los Requerimientos Funcionales (RF-01 a RF-05) del Caso 3.
- * Semana 2: Colecciones (ArrayList), manejo de errores, modificador estático.
- * Semana 3: Diagrama UML – clase central con relaciones de agregación y composición.
- */
 public class Inventario {
 
-    // ── Atributos privados ────────────────────────────────────────────────────
+    
     private int    idInventario;
     private String fecha;
     private int    totalProductos;
@@ -25,7 +13,7 @@ public class Inventario {
     // Composición: los movimientos pertenecen al inventario
     private ArrayList<MovimientoStock> movimientos;
 
-    // ── Constructor ───────────────────────────────────────────────────────────
+   
     public Inventario(int idInventario, String fecha) {
         this.idInventario  = idInventario;
         this.fecha         = fecha;
@@ -34,14 +22,14 @@ public class Inventario {
         this.movimientos   = new ArrayList<>();
     }
 
-    // ── Getters ───────────────────────────────────────────────────────────────
+  
     public int getIdInventario()    { return idInventario; }
     public String getFecha()        { return fecha; }
     public int getTotalProductos()  { return totalProductos; }
 
-    // ──────────────────────────────────────────────────────────────────────────
+    
     //  RF-01: Registrar Producto
-    // ──────────────────────────────────────────────────────────────────────────
+    
     /**
      * Agrega un producto al inventario. Valida que no exista un ID duplicado
      * y que los campos obligatorios sean correctos (HU-01, Criterio exitoso/fallido).
@@ -70,9 +58,9 @@ public class Inventario {
         System.out.println("[OK] Producto '" + producto.getNombre() + "' registrado correctamente.");
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
+    
     //  RF-04: Eliminar Producto
-    // ──────────────────────────────────────────────────────────────────────────
+   
     /**
      * Elimina un producto por su ID. No permite eliminar si tiene movimientos activos.
      */
@@ -96,9 +84,9 @@ public class Inventario {
         System.out.println("[OK] Producto '" + p.getNombre() + "' eliminado del inventario.");
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
+    
     //  RF-03: Buscar Producto
-    // ──────────────────────────────────────────────────────────────────────────
+    
 
     /** Busca por nombre o categoría (búsqueda parcial, insensible a mayúsculas). */
     public Producto buscarProducto(String criterio) {
@@ -140,9 +128,9 @@ public class Inventario {
         return resultado;
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
+    
     //  RF-02: Actualizar Stock (registrar movimiento)
-    // ──────────────────────────────────────────────────────────────────────────
+    
     /**
      * Registra un movimiento de stock (entrada o salida) y lo guarda en el inventario.
      * Aplica la composición: el movimiento pertenece al inventario.
@@ -158,9 +146,9 @@ public class Inventario {
         }
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
+    
     //  RF-05: Generar Reporte
-    // ──────────────────────────────────────────────────────────────────────────
+    
     /**
      * Genera y devuelve un reporte completo del inventario:
      * productos, stock y valor total (HU-03).
