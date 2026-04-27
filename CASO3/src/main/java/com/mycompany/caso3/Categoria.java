@@ -11,7 +11,7 @@ class Categoria {
         this.nombre      = nombre;
         this.descripcion = descripcion;
     }
-    // ── Getters y Setters ─────────────────────────────────────────────────────
+    // ── Getters y Setters 
     public int getIdCategoria() {
         return idCategoria;
     }
@@ -36,7 +36,7 @@ class Categoria {
         this.descripcion = descripcion;
     }
 
-    // ── Método de representación ──────────────────────────────────────────────
+    // ── Método de representación 
     @Override
     public String toString() {
         return "Categoria{id=" + idCategoria + ", nombre='" + nombre + "', descripcion='" + descripcion + "'}";

@@ -73,7 +73,7 @@ public class Main {
         
         // 6. MOSTRAR DATOS DE UN PRODUCTO
         
-        System.out.println("\n► Detalle de un producto:");
+        System.out.println("\n Detalle de un producto:");
         System.out.println(p1.mostrarDatos());
 
         
@@ -148,7 +148,7 @@ public class Main {
         System.out.println("  Categoria renombrada: " + catElectronica.getNombre());
 
         System.out.println("\n╔══════════════════════════════════════════════════════╗");
-        System.out.println("║   Ejecución completada – Sistema de Inventario OK    ║");
+        System.out.println("║   Ejecución completada  Sistema de Inventario OK     ║");
         System.out.println("╚══════════════════════════════════════════════════════╝");
     }
 }
