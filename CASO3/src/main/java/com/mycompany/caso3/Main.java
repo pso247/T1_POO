@@ -3,17 +3,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║    SISTEMA DE GESTIÓN DE INVENTARIO – Caso 3 UML     ║");
-        System.out.println("╚══════════════════════════════════════════════════════╝\n");
+        System.out.println("SISTEMA DE GESTION DE INVENTARIO Caso 3 UML");
 
        
         // 1. CREAR CATEGORÍAS (Composición con Producto)
         
-        System.out.println("► Creando categorías...");
-        Categoria catElectronica  = new Categoria(1, "Electrónica",  "Dispositivos y accesorios electrónicos");
+        System.out.println("Creando categorias...");
+        Categoria catElectronica  = new Categoria(1, "ElectrOnica",  "Dispositivos y accesorios electronicos");
         Categoria catAlimentos    = new Categoria(2, "Alimentos",    "Productos de consumo alimenticio");
-        Categoria catLimpieza     = new Categoria(3, "Limpieza",     "Artículos de higiene y limpieza");
+        Categoria catLimpieza     = new Categoria(3, "Limpieza",     "ArtIculos de higiene y limpieza");
         System.out.println("  " + catElectronica);
         System.out.println("  " + catAlimentos);
         System.out.println("  " + catLimpieza);
@@ -21,7 +19,7 @@ public class Main {
        
         // 2. CREAR PROVEEDORES (Asociación con Producto)
         
-        System.out.println("\n► Creando proveedores...");
+        System.out.println("\n Creando proveedores...");
         Proveedor prov1 = new Proveedor(1, "TechDistrib SAC",    "987654321", "ventas@techdistrib.pe");
         Proveedor prov2 = new Proveedor(2, "AlimPeru EIRL",      "912345678", "pedidos@alimperu.pe");
         Proveedor prov3 = new Proveedor(3, "LimpiaMax S.A.",     "933221100", "contacto@limpiamax.pe");
@@ -32,9 +30,9 @@ public class Main {
         
         // 3. CREAR PRODUCTOS (RF-01 – Registrar Producto | HU-01)
        
-        System.out.println("\n► Creando productos (RF-01)...");
+        System.out.println("\n Creando productos (RF-01)...");
         Producto p1 = new Producto(101, "Laptop HP 15\"",  "Laptop Intel Core i5, 8GB RAM, 512GB SSD",  3500.00, 15, catElectronica);
-        Producto p2 = new Producto(102, "Mouse Inalámbrico", "Mouse USB 2.4GHz, 1600 DPI",              45.00,  80, catElectronica);
+        Producto p2 = new Producto(102, "Mouse Inalambrico", "Mouse USB 2.4GHz, 1600 DPI",              45.00,  80, catElectronica);
         Producto p3 = new Producto(103, "Arroz Extra",      "Bolsa de arroz de 5 kg, grano largo",       18.50, 200, catAlimentos);
         Producto p4 = new Producto(104, "Aceite Vegetal",   "Botella de aceite vegetal 1 litro",         9.90,  150, catAlimentos);
         Producto p5 = new Producto(105, "Detergente Ariel", "Detergente en polvo 2 kg, fragancia fresh", 22.00,  60, catLimpieza);
@@ -50,7 +48,7 @@ public class Main {
        
         // 4. CREAR INVENTARIO y AGREGAR PRODUCTOS (Agregación)
      
-        System.out.println("\n► Creando inventario y registrando productos...");
+        System.out.println("\n Creando inventario y registrando productos...");
         Inventario inventario = new Inventario(1, "2026-04-25");
         inventario.agregarProducto(p1);
         inventario.agregarProducto(p2);
@@ -61,7 +59,7 @@ public class Main {
        
         // 5. VALIDACIONES – HU-01 Criterio Fallido (campos inválidos)
         
-        System.out.println("\n► Probando validaciones (HU-01 – Criterio fallido)...");
+        System.out.println("\n Probando validaciones (HU-01 Criterio fallido)...");
         // Producto con nombre vacío
         Producto invalido1 = new Producto(200, "", "sin nombre", 10.0, 5, catLimpieza);
         inventario.agregarProducto(invalido1);
@@ -81,7 +79,7 @@ public class Main {
         
         // 7. RF-03 – BUSCAR PRODUCTO
         
-        System.out.println("\n► Búsqueda de producto (RF-03)...");
+        System.out.println("\n Busqueda de producto (RF-03)...");
         Producto encontrado = inventario.buscarProducto("Mouse");
         if (encontrado != null) {
             System.out.println("  Resultado: " + encontrado);
@@ -99,7 +97,7 @@ public class Main {
         // 8. RF-02 – ACTUALIZAR STOCK (movimientos de entrada y salida)
         //    HU-02: Criterio exitoso y fallido
         
-        System.out.println("\n► Registrando movimientos de stock (RF-02 | HU-02)...");
+        System.out.println("\n Registrando movimientos de stock (RF-02 | HU-02)...");
 
         // ENTRADA exitosa
         MovimientoStock mov1 = new MovimientoStock(MovimientoStock.ENTRADA, 30, "2026-04-25", p2);
@@ -121,7 +119,7 @@ public class Main {
         
         // 9. RF-04 – ELIMINAR PRODUCTO
         
-        System.out.println("\n► Eliminando producto (RF-04)...");
+        System.out.println("\n Eliminando producto (RF-04)...");
         // Intento fallido: producto con movimientos activos
         System.out.println("  [Intentando eliminar producto con movimientos activos]:");
         inventario.eliminarProducto(102); // p2 tiene mov1
@@ -134,20 +132,20 @@ public class Main {
         
         // 10. RF-05 – GENERAR REPORTE FINAL (HU-03)
         
-        System.out.println("\n► Generando reporte del inventario (RF-05 | HU-03)...\n");
+        System.out.println("\n Generando reporte del inventario (RF-05 | HU-03)...\n");
         System.out.println(inventario.generarReporte());
 
         
         // 11. PROBAR SETTER CON VALIDACIÓN (Semana 2: manejo de errores)
         
-        System.out.println("► Probando setters con validación (Semana 2 – manejo de errores)...");
+        System.out.println(" Probando setters con validacion (Semana 2 – manejo de errores)...");
         prov1.setEmail("emailinvalido"); // sin @
         prov1.setEmail("nuevo@correo.pe");
         System.out.println("  Email actualizado: " + prov1.getEmail());
 
         catElectronica.setNombre(""); // nombre vacío
         catElectronica.setNombre("Tecnología");
-        System.out.println("  Categoría renombrada: " + catElectronica.getNombre());
+        System.out.println("  Categoria renombrada: " + catElectronica.getNombre());
 
         System.out.println("\n╔══════════════════════════════════════════════════════╗");
         System.out.println("║   Ejecución completada – Sistema de Inventario OK    ║");

@@ -2,7 +2,7 @@ package com.mycompany.caso3;
 public class Proveedor {
 
     // Atributos privados (encapsulamiento)
-    private int    idProveedor;
+    private int idProveedor;
     private String nombre;
     private String telefono;
     private String email;
